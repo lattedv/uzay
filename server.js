@@ -8,30 +8,101 @@ var prefix = ayarlar.prefix;
 
 require('./util/eventLoader')(client);
 
+
+
+const log = message => {
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
+};
+
+
+
 client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
+fs.readdir('./komutlar/', (err, files) => {
+  if (err) console.error(err);
+  log(`${files.length} komut yüklenecek.`);
+  files.forEach(f => {
+    let props = require(`./komutlar/${f}`);
+    log(`Yüklenen komut: ${props.help.name}.`);
+    client.commands.set(props.help.name, props);
+    props.conf.aliases.forEach(alias => {
+      client.aliases.set(alias, props.help.name);
+    });
+  });
+});
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+client.reload = command => {
+  return new Promise((resolve, reject) => {
+    try {
+      delete require.cache[require.resolve(`./komutlar/${command}`)];
+      let cmd = require(`./komutlar/${command}`);
+      client.commands.delete(command);
+      client.aliases.forEach((cmd, alias) => {
+        if (cmd === command) client.aliases.delete(alias);
+      });
+      client.commands.set(command, cmd);
+      cmd.conf.aliases.forEach(alias => {
+        client.aliases.set(alias, cmd.help.name);
+      });
+      resolve();
+    } catch (e){
+      reject(e);
+    }
+  });
+};
 
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	// set a new item in the Collection
-	// with the key as the command name and the value as the exported module
-	client.commands.set(command.name, command);
+client.load = command => {
+  return new Promise((resolve, reject) => {
+    try {
+      let cmd = require(`./komutlar/${command}`);
+      client.commands.set(command, cmd);
+      cmd.conf.aliases.forEach(alias => {
+        client.aliases.set(alias, cmd.help.name);
+      });
+      resolve();
+    } catch (e){
+      reject(e);
+    }
+  });
+};
+
+client.unload = command => {
+  return new Promise((resolve, reject) => {
+    try {
+      delete require.cache[require.resolve(`./komutlar/${command}`)];
+      let cmd = require(`./komutlar/${command}`);
+      client.commands.delete(command);
+      client.aliases.forEach((cmd, alias) => {
+        if (cmd === command) client.aliases.delete(alias);
+      });
+      resolve();
+    } catch (e){
+      reject(e);
+    }
+  });
 }
-client.on('message', message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-	const args = message.content.slice(prefix.length).trim().split(/ +/);
-	const command = args.shift().toLowerCase();
+client.elevation = message => {
+  if(!message.guild) {
+	return; }
+  let permlvl = 0;
+  if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 2;
+  if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
+  if (message.author.id === ayarlar.sahip) permlvl = 4;
+  return permlvl;
+};
 
-	if (!client.commands.has(command)) return;
+var regToken = /[\w\d]{24}\.[\w\d]{6}\.[\w\d-_]{27}/g;
+// client.on('debug', e => {
+//   console.log(chalk.bgBlue.green(e.replace(regToken, 'that was redacted')));
+// });
 
-	try {
-		client.commands.get(command).execute(message, args);
-	} catch (error) {
-		console.error(error);
-		message.reply('there was an error trying to execute that command!');
-	}
+client.on('warn', e => {
+  console.log(chalk.bgYellow(e.replace(regToken, 'that was redacted')));
+});
+
+client.on('error', e => {
+  console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
 
 

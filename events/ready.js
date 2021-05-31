@@ -6,10 +6,11 @@ const ayarlar = require('../ayarlar.json');
 var prefix = ayarlar.prefix;
 
 module.exports = client => {
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Aktif, Komutlar yüklendi!`);
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} İsmi İle Giriş Yapıldı!`);
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT:`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] SANCTUS ALTYAPI: Aktif, Komutlar yüklendi!`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] SANCTUS ALTYAPI: ${client.user.username} İsmi İle Giriş Yapıldı!`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] SANCTUS ALTYAPI:`);
   client.user.setStatus("dnd");
- client.user.setActivity("Oynuyor", { type: "WATCHING" });
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Oyun ismi ayarlandı!`);
+  //idle : Boşta dnd : rahatsız Etmeyin online : çevrimiçi
+ client.user.setActivity("SANCTUS <3 SİZ", { type: "WATCHING" });
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] SANCTUS ALTYAPI: Oyun ismi ayarlandı!`);
 };
