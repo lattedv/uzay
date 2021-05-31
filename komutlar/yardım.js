@@ -5,15 +5,16 @@ exports.run = (client, message, params) => {
   
   const embed = new Discord.MessageEmbed()
   .setColor('RANDOM')
+  
   .setTitle("SANCTUS YARDIM MENÜSÜ")
-  .addField(".**ping**", `Botun Pingini Gösterir`)
-  .addField(".**ping**", `Botun Pingini Gösterir`)
-  .addField(".**ping**", `Botun Pingini Gösterir`)
-  .addField(".**ping**", `Botun Pingini Gösterir`)
-  .addField(".**ping**", `Botun Pingini Gösterir`)
-  .addField(".**ping**", `Botun Pingini Gösterir`)
-  .addField(".**ping**", `Botun Pingini Gösterir`)
-  .addField(".**ping**", `Botun Pingini Gösterir`)
+  .addField(".**komut**", `kendiniz yazınız`)
+  .addField(".**komut**", `kendiniz yazınız`)
+  .addField(".**komut**", `kendiniz yazınız`)
+  .addField(".**komut**", `kendiniz yazınız`)
+  .addField(".**komut**", `kendiniz yazınız`)
+  .addField(".**komut**", `kendiniz yazınız`)
+  .addField(".**komut**", `kendiniz yazınız`)
+  .addField(".**komut**", `kendiniz yazınız`)
   
 message.channel.send(embed)
 }
