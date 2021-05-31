@@ -7,6 +7,14 @@ exports.run = (client, message, params) => {
   .setColor('RANDOM')
   .setTitle("SANCTUS YARDIM MENÜSÜ")
   .addField(".**ping**", `Botun Pingini Gösterir`)
+  .addField(".**ping**", `Botun Pingini Gösterir`)
+  .addField(".**ping**", `Botun Pingini Gösterir`)
+  .addField(".**ping**", `Botun Pingini Gösterir`)
+  .addField(".**ping**", `Botun Pingini Gösterir`)
+  .addField(".**ping**", `Botun Pingini Gösterir`)
+  .addField(".**ping**", `Botun Pingini Gösterir`)
+  .addField(".**ping**", `Botun Pingini Gösterir`)
+  
 message.channel.send(embed)
 }
 
