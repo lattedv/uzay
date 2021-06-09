@@ -12,11 +12,32 @@ module.exports.run = async (client, message, args) => {
    var online = message.guild.members.cache.filter(off => off.presence.status !== 'offline').size
    var tag = message.guild.members.cache.filter(a => a.user.username.includes(tag)).size
    var sestekiüye = message.guild.members.cache.filter(s => s.voice.channel).size;
+
+  
+  const say = new discord.MessageEmbed()
+  
+  .setColor("RANDOM")
+  .setTitle("SANCTUS SAY SİSTEMİ")
+  .setDescription(`
+  
+  
+  `)
+  message.chanel.send(say)
   
   
   
   
   
-  
+}
+
+  exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['say','kişi'],
+    permLevel: 0,
+}
+
+exports.help = {
+      name: "say"  
   
 }
