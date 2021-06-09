@@ -5,7 +5,7 @@ const discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
   
   
-   var tag = "Tagınız"
+   var tag = "F"
    var etikettag = message.guild.members.cache.filter(s => !s.bot).filter(member => member.user.discriminator == "etiket tagınızı giriniz").size;
    var ailem = message.guild.members.cache.filter(s => !s.bot).filter(member => member.user.username.includes(tag) || member.user.discriminator == "0099").size;
    var üye =  message.guild.memberCount
@@ -15,16 +15,16 @@ module.exports.run = async (client, message, args) => {
 
   
   const say = new discord.MessageEmbed()
-  
+   .setTimestamp()
   .setColor("RANDOM")
   .setTitle("SANCTUS SAY SİSTEMİ")
-  .setDescription(`**
-  Sunucudaki Toplam Üye ${üye}
- ses Sunucdaki Toplam Sesteki Üye ${sestekiüye}
-  Sunucudaki Toplam Çevrimiçi Üye ${online}
-  Tagımızı Alan Toplam Üye ${ailem}
-  Sunucumuzun Tagı ${tag}
-  Sunucumuzun Etiket Tagı ${etikettag}
+  .setDescription(`
+ ✔ Sunucudaki Toplam Üye __${üye}__
+ 🔉 Sunucdaki Toplam Sesteki Üye __${sestekiüye}__
+ 🟢 Sunucudaki Toplam Çevrimiçi Üye __${online}__
+  Tagımızı Alan Toplam Üye __${ailem}__
+  Sunucumuzun Tagı <TAGI YAZIN>
+  Sunucumuzun Etiket Tagı <TAGI YAZIN>
   **`)
   message.channel.send(say)
   
