@@ -107,7 +107,14 @@ client.on('error', e => {
 
 
 
-
+client.on("ready", async () => {
+  let botVoiceChannel = client.channels.cache.get(ayarlar.seskanal); 
+  console.log("Bot Ses Kanalına bağlandı!");
+  if (botVoiceChannel)
+    botVoiceChannel
+      .join()
+      .catch(err => console.error("Bot ses kanalına bağlanamadı!"));
+});
 
 
 
