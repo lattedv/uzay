@@ -199,5 +199,5 @@ client.on("guilMemberAdd", member =>{
   
 member.roles.add(ayarlar.kayıtsız);
   
-member.nick
+member.setNickname(ayarlar.kayıtsızisim)
 });
