@@ -228,13 +228,13 @@ client.on("message", sanctus => {
 	}
   });
 
-
+//TAG ROL
 client.on("userUpdate", async function(oldUser, newUser) { 
-    const guildID = ayarlar.tagsunucusu//sunucu
-    const roleID = ayarlar.tagrol//taglırolü
+    const guildID = ayarlar.sunucu//Sunucunuz
+    const roleID = ayarlar.taglırolu//taglırolü
     const tag = ayarlar.tag
     const chat = ayarlar.genelchat// chat
-    const log2 = ayarlar.tagrolog// log kanalı
+    const log2 = ayarlar.taglog// log kanalı
   
     const guild = client.guilds.cache.get(guildID)
     const role = guild.roles.cache.find(roleInfo => roleInfo.id === roleID)
@@ -251,10 +251,10 @@ client.on("userUpdate", async function(oldUser, newUser) {
         }
     }
    if (newUser.discriminator !== oldUser.discriminator) {
-        if (oldUser.discriminator == "1903" && newUser.discriminator !== "1903") {
+        if (oldUser.discriminator == "etiket yazınız" && newUser.discriminator !== "etiket yazınız") {
             member.roles.remove(roleID)
             client.channels.cache.get(log2).send(embed.setDescription(`  <@!' + newUser + '> etiketinden \`1903\` çıakrtarak ailemizden ayrıldı!`))
-        } else if (oldUser.discriminator !== "1903" && newUser.discriminator == "1903") {
+        } else if (oldUser.discriminator !== "etiket yazınız" && newUser.discriminator == "etiket yazınız") {
             member.roles.add(roleID)
             client.channels.cache.get(log2).send(embed.setDescription(`  <@!' + newUser + '> etiketine \`1903\` alarak ailemize katıldı`))
             client.channels.cache.get(chat).send(`Tebrikler, ${newUser} tag alarak ailemize katıldı ona sıcak bir **'Merhaba!'** diyin.(#0099)`)
@@ -263,3 +263,20 @@ client.on("userUpdate", async function(oldUser, newUser) {
   
   })
 //TAG ROL SİSTEMİ LROWSTAN ALINMIŞTIR BEN TARAFINDA DEĞİŞTİRİLMİŞTİR DEĞİŞTİRİLMİŞTİR
+
+
+//sayaç 
+
+
+
+client.on("guildMembetAdd", member => {
+  module.exports.run = async (client, message, args) => {
+  const sayac = new Discord.MessageEmbed()
+  .setColor("RANDOM")
+  .setFooter("SAYAÇ SANCTUS")
+  .setDescription(`
+ 
+  `)
+  
+ message.channel.send(sayac)
+}});
