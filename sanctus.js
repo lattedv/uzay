@@ -106,7 +106,7 @@ client.on('error', e => {
 });
 
 
-
+//BOTU SESE SOKMA
 client.on("ready", async () => {
   let botVoiceChannel = client.channels.cache.get(ayarlar.seskanal); 
   console.log("Bot Ses Kanalına bağlandı!");
@@ -120,3 +120,84 @@ client.on("ready", async () => {
 
 
 client.login(process.env.token);
+
+//GİRİŞ MESAJ
+
+client.on("guildMemberAdd", member => {
+	require("moment-duration-format");
+
+
+	var üyesayısı = member.guild.members.cache.size
+    .toString()
+    .replace(/ /g, "    ");
+  var üs = üyesayısı.match(/([0-999])/g);
+  üyesayısı = üyesayısı.replace(/([a-zA-Z])/g, "bilinmiyor").toLowerCase();
+  if (üs) {
+    üyesayısı = üyesayısı.replace(/([0-9999])/g, d => {
+      return {
+      
+      }[d];
+    });
+  }
+  const kanal = member.guild.channels.cache.find(
+    r => r.id === "KANAL İD"
+  );
+  let user = client.users.cache.get(member.id);
+  require("moment-duration-format");
+  let memberDay = Date.now() - member.user.createdTimestamp;
+  let createAt = moment
+    .duration(memberDay)
+    .format("Y [Yıl], M [ay], W [hafta], DD [gün]");
+  let createAt2 = moment
+    .duration(memberDay)
+    .format("DD [gün], HH [saat], mm [dakika]");
+  if (memberDay > 604800000) {
+  }
+  const kurulus = new Date().getTime() - user.createdAt.getTime();
+  const gecen = moment
+    .duration(kurulus)
+    .format(
+      ` YY **[Yıl,]** DD **[Gün,]** HH **[Saat,]** mm **[Dakika,]** ss **[Saniye]**`
+    );
+  var kontrol;
+  if (kurulus < 1296000000)
+    kontrol =
+      "**🤨 Hesap **__Güvenilir Gözükmüyor.__**";
+  if (kurulus > 1296000000)
+    kontrol = "** 😀 __Hesap Güvenli.__**";
+  moment.locale("tr");
+  kanal.send(
+    `
+SANCTUS SUNUCUSUNA HOŞGELDİN
+
+ Hoşgeldin <@` +
+      member + 
+      `>  Seninle **${member.guild.memberCount}** Kişiyiz
+
+  Sunucuya Kayıt Olmak İçin Sol Taraftaki <#KAYIT SES KANAL İD> Odalarına Geçiş Yapabilirsin      
+
+   Tagımızı Alarak Bizi Mutlu Edebilirsin \`${ayarlar.tag}\` 
+
+ Tagımızı Alırsan Çekilişlerde Kazanma Şansın Daha Fazla Olur
+
+ Tagmızı Alırsan <@&tag rol id> Rolüne Sahip Olursun 
+
+  Bu Roldeki Arkadaşlarım Seninle İlgilenecektir  <@&kayıtcı id> 
+
+ Hesabın __**${createAt}**__ Önce Açılmış.
+
+` +
+      kontrol +
+      `**`
+  );
+});
+
+
+// OTOROL ve OTO İSİM
+
+client.on("guilMemberAdd", member =>{
+  
+member.roles.add(ayarlar.kayıtsız);
+  
+member.nick
+});
