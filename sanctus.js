@@ -201,3 +201,65 @@ member.roles.add(ayarlar.kayıtsız);
   
 member.setNickname(ayarlar.kayıtsızisim)
 });
+
+
+
+//tag mesaj
+
+client.on("message", sanctus => {
+	if (sanctus.content.toLowerCase() === "tag") {
+	  //TAG
+	  sanctus.channel.send("Tagınız");
+	}
+  });
+
+client.on("message", sanctus => {
+	if (sanctus.content.toLowerCase() === ".tag") {
+	  //TAG
+	  sanctus.channel.send("Tagınız");
+	}
+  });
+
+
+client.on("message", sanctus => {
+	if (sanctus.content.toLowerCase() === "!tag") {
+	  //TAG
+	  sanctus.channel.send("Tagınız");
+	}
+  });
+
+
+client.on("userUpdate", async function(oldUser, newUser) { 
+    const guildID = ayarlar.tagsunucusu//sunucu
+    const roleID = ayarlar.tagrol//taglırolü
+    const tag = ayarlar.tag
+    const chat = ayarlar.genelchat// chat
+    const log2 = ayarlar.tagrolog// log kanalı
+  
+    const guild = client.guilds.cache.get(guildID)
+    const role = guild.roles.cache.find(roleInfo => roleInfo.id === roleID)
+    const member = guild.members.cache.get(newUser.id)
+    const embed = new Discord.MessageEmbed().setAuthor(member.displayName, member.user.avatarURL({ dynamic: true })).setColor('#ff0000').setTimestamp().setFooter('SANCTUS TAG ROL SİSTEMİ');
+    if (newUser.username !== oldUser.username) {
+        if (oldUser.username.includes(tag) && !newUser.username.includes(tag)) {
+            member.roles.remove(roleID)
+            client.channels.cache.get(log2).send(embed.setDescription(` ${newUser} isminden ${ayarlar.tag} çıkartarak ailemizden ayrıldı!`))
+        } else if (!oldUser.username.includes(tag) && newUser.username.includes(tag)) {
+            member.roles.add(roleID)
+            client.channels.cache.get(chat).send(`Tebrikler, ${newUser} tag alarak ailemize katıldı ona sıcak bir **'Merhaba!'** diyin.(${tag})`)
+            client.channels.cache.get(log2).send(embed.setDescription(`  ${newUser} ismine ${ayarlar.tag} alarak ailemize katıldı`))
+        }
+    }
+   if (newUser.discriminator !== oldUser.discriminator) {
+        if (oldUser.discriminator == "1903" && newUser.discriminator !== "1903") {
+            member.roles.remove(roleID)
+            client.channels.cache.get(log2).send(embed.setDescription(`  <@!' + newUser + '> etiketinden \`1903\` çıakrtarak ailemizden ayrıldı!`))
+        } else if (oldUser.discriminator !== "1903" && newUser.discriminator == "1903") {
+            member.roles.add(roleID)
+            client.channels.cache.get(log2).send(embed.setDescription(`  <@!' + newUser + '> etiketine \`1903\` alarak ailemize katıldı`))
+            client.channels.cache.get(chat).send(`Tebrikler, ${newUser} tag alarak ailemize katıldı ona sıcak bir **'Merhaba!'** diyin.(#0099)`)
+        }
+    }
+  
+  })
+//TAG ROL SİSTEMİ LROWSTAN ALINMIŞTIR BEN TARAFINDA DEĞİŞTİRİLMİŞTİR DEĞİŞTİRİLMİŞTİR
