@@ -140,7 +140,7 @@ client.on("guildMemberAdd", member => {
     });
   }
   const kanal = member.guild.channels.cache.find(
-    r => r.id === "KANAL İD"
+    r => r.id === "KAYIT KANALI İD"
   );
   let user = client.users.cache.get(member.id);
   require("moment-duration-format");
@@ -269,14 +269,3 @@ client.on("userUpdate", async function(oldUser, newUser) {
 
 
 
-client.on("guildMembetAdd", member => {
-  module.exports.run = async (client, message, args) => {
-  const sayac = new Discord.MessageEmbed()
-  .setColor("RANDOM")
-  .setFooter("SAYAÇ SANCTUS")
-  .setDescription(`
- 
-  `)
-  
- message.channel.send(sayac)
-}});
