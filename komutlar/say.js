@@ -18,11 +18,15 @@ module.exports.run = async (client, message, args) => {
   
   .setColor("RANDOM")
   .setTitle("SANCTUS SAY SİSTEMİ")
-  .setDescription(`
-  
-  
-  `)
-  message.chanel.send(say)
+  .setDescription(`**
+  Sunucudaki Toplam Üye ${üye}
+ ses Sunucdaki Toplam Sesteki Üye ${sestekiüye}
+  Sunucudaki Toplam Çevrimiçi Üye ${online}
+  Tagımızı Alan Toplam Üye ${ailem}
+  Sunucumuzun Tagı ${tag}
+  Sunucumuzun Etiket Tagı ${etikettag}
+  **`)
+  message.channel.send(say)
   
   
   
