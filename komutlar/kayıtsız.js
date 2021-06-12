@@ -24,7 +24,7 @@ if(kullanici.id === message.author.id)return message.channel.send(new MessageEmb
 if(kullanici.id === client.user.id)return message.channel.send(new MessageEmbed().setDescription(`${message.author}, Lan Botu Kayıtsıza Atıp Napıcan La Botu Kayıtsıza Atamam`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp()).then(x => x.delete({timeout: 5000}));
 if(kullanici.id === message.guild.OwnerID) return message.channel.send(new MessageEmbed().setDescription(`${message.author}, Sen Hayırdır Sunucu Sahibini Kayıtsıza Atmaya Çalışıyorsun???`).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setColor('0x800d0d').setTimestamp()).then(x => x.delete({timeout: 5000}));
 
-message.channel.send(new MessageEmbed().setDescription(`${kullanici} Adlı kullanıcıya <@&ROL İD> Rolü Verildi`).setColor('0x348f36').setFooter(message.author.tag, message.author.avatarURL({dynamic: true})).setTimestamp()) 
+message.channel.send(new MessageEmbed().setDescription(`${kullanici} Adlı kullanıcıya <@&842138137873350687> Rolü Verildi`).setColor('0x348f36').setFooter(message.author.tag, message.author.avatarURL({dynamic: true})).setTimestamp()) 
 kullanici.setNickname(ayarlar.kayıtsızisim)
 kullanici.roles.add(kayıtsız) 
 kullanici.roles.cache.forEach(r => {
