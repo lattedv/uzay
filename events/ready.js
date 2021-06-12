@@ -6,15 +6,14 @@ const ayarlar = require('../ayarlar.json');
 var prefix = ayarlar.prefix;
 
 module.exports = client => {
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] SANCTUS ALTYAPI: Aktif, Komutlar yüklendi!`);
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] SANCTUS ALTYAPI: ${client.user.username} İsmi İle Giriş Yapıldı!`);
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] SANCTUS ALTYAPI: HER DAİM SİZLERLE`);//BURALARI DEĞİŞTİRE BİLİRSİNİZ 
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] LATTE ALTYAPI: Aktif, Komutlar yüklendi!`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] LATTE ALTYAPI: ${client.user.username} İsmi İle Giriş Yapıldı!`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] LATTE ALTYAPI: HER DAİM SİZLERLE`);//BURALARI DEĞİŞTİRE BİLİRSİNİZ 
   client.user.setStatus("dnd");
   //idle : Boşta dnd : rahatsız Etmeyin online : çevrimiçi
- client.user.setActivity("SANCTUS <3 KAYIT", { type: "WATCHING" });
+ client.user.setActivity("LATTE <3 KAYIT", { type: "WATCHING" });
   // PLAYING : oynuyur LISTENING : dinliyor  WATCHING : İZLİOR 
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] SANCTUS ALTYAPI: Oyun ismi ayarlandı!`);
+  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] LATTE ALTYAPI: Oyun ismi ayarlandı!`);
 };
 
 
-//sanctus 
