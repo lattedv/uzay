@@ -1,38 +1,38 @@
 const Discord = require("discord.js");
+const db = require("quick.db");
 
-
-exports.run = (client, message, params) => {
+module.exports.run = async (client, message, args) => {
+    
+  message.channel.send(new Discord.MessageEmbed().setColor('#32cd32').setDescription(`**BOŞ YARDIM MENÜSÜ**
   
-  const embed = new Discord.MessageEmbed()
-  .setColor('RANDOM')
+\`.e : belirttiğiniz kullancıyı erkek olarak kayıt eder.\`  
+\`.k : belirttiğiniz kullancıyı kadın olarak kayıt eder.\` 
+\`.ban : belirttiğiniz kullancıyı sunucudan yasaklar.\` 
+\`.kick : belirttiğiniz kullancıyı sunucudan atar.\` 
+\`.unban : belirttiğiniz kullancının yasağını kaldırır.\` 
+\`.sil : belirttiğiniz sayıda mesajı siler.\`
+\`.nuke : kanalı siler ve kopyasını oluşturur.\`
+\`.top : top kayıtcıları gösterir.\`
+\`.sorgu : belirttiğiniz kullancının loglarını gösterir.\`
+\`.ping : botun pingini gösterir.\`
+\`.yardım : botun yardım menüsüne erişim sağlar.\`
+   
+**Latte**  
   
-  .setTitle("BOŞ YARDIM MENÜSÜ")
-  .addField("```.e:Belirttiğiniz kullanıcıyı erkek olarak kayıt eder.```")
-  .addField(".**k**", `Belirttiğiniz kullanıcıyı kadın olarak kayıt eder.`) 
-  .addField(".**nuke**", `Kanalı siler ve kopyasını oluşturur.`) 
-  .addField(".**ban**", `Belirttiğiniz üyeyi sunucudan yasaklar.`) 
-  .addField(".**kick**", `Belirttiğiniz üyeyi sunucudan atar.`) 
-  .addField(".**sil**", `Belirttiğiniz sayıda mesajı siler.`) 
-  .addField(".**isim**", `Belirttiğiniz üyenin ismini değiştirir.`) 
-  .addField(".**ping**", `Botun pingini gösterir.`) 
-  .addField(".**say**", `Sunucu hakkında bilgi verir.`) 
-  .addField(".**top**", `Kayıt sıralamasını gösterir.`) 
-  .addField(".**kayıtsız**", `Belirttiğiniz üyenin tüm rollerini alır ve kayıtsız rolü verir.`) 
+  `).setThumbnail(message.author.avatarURL() ? message.author.avatarURL({dynamic: true}) : 'https://cdn.discordapp.com/attachments/799170794688217109/799282353192304680/kel20olmak.png'))
 
 
-message.channel.send(embed)
-}
-
-
+  //message.channel.send(embed);
+  
+};
 
 exports.conf = {
-  enable: true,
-  guildOnly: false,
-  aliases: ["y"],
-  permLevel: 0
-}
+    enabled: true,
+    guildOnly: false,
+    aliases:['help', 'bilgi'],
+    permlevel: 0
+};
+
 exports.help = {
-  name: "yardım",
-  description: "botun yardım menüsünü gösterir.",
-  usage: "yardım"
+    name: "yardım"
 }
