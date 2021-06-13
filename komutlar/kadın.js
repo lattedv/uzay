@@ -85,11 +85,11 @@ Kayıt Edilen kullanıcı : ${member}
 Kayıt İşleminde Verilen Rol : <@&${ayarlar.kadınROL}>
 Yeni Kullanıcı Adı :  \`${tag} ${name} | ${age}\` **
 
-**Bu Kullanıcının Sunucudaki Eski İsimleri [${sayı++ || "0"}]     \n\n${data.join('\n')} ** `)
+**Bu Kullanıcının Sunucudaki Eski İsimleri; ** `)
 
 .setColor("0x348f36")
 .setTimestamp()
-
+.setFooter(message.author.tag, message.author.avatarURL({dynamic: true}))
 
 
 

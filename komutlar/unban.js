@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
         return message.channel.send(new MessageEmbed().setColor("BLUE").setTitle("Hata Kullanım ").setDescription(`**\<a:redgif:853591843630219304> | Hatalı ID veya kullanıcı banlı değil.**`))
     }
     message.guild.members.unban(user);
-    message.channel.send((new MessageEmbed().setColor("BLUE").setTitle("Başarılı").setDescription(`<@${args[0]}> \`(${args[0]})\` Kullanıcının yasağı kaldırıldı. | :tick:`)))
+    message.channel.send((new MessageEmbed().setColor("BLUE").setTitle("Başarılı").setDescription(`<@${args[0]}> \`(${args[0]})\` adlı kullanıcının yasağı kaldırıldı. | <a:onay2:853601880785944586> `)))
 };
 
 exports.conf = {
