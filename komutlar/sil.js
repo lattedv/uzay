@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = async(yashinu, message, args) => {
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`**Bu komutu kullanabilmek için __MESAJLARI YÖNET__ iznine sahip olmalısın!**`).then(beta => beta.delete({timeout: 3000}));
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setDescription(`<a:unlem:833495327319130114> | Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin!`)).then(beta => beta.delete({timeout: 3000}));
   if (!args[0] || isNaN(args[0])) return message.reply(`Temizlenecek mesaj miktarını belirtmelisin!`).then(beta2 => beta2.delete({timeout: 3000}));;
   message.delete();
   let rexussayi = Number(args[0]);

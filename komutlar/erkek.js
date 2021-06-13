@@ -79,7 +79,6 @@ const embed = new Discord.MessageEmbed()
 .setTitle("Kayıt Başarılı")
 .setThumbnail(member.user.avatarURL({dynamic: true}))
 .setDescription(`
-Kayıt eden yetkil : $@{message.author.avatar}
  **Kayıt Edilen kullanıcı : ${member}
  Kayıt İşleminde Verilen Rol : <@&${ayarlar.erkekROL}>
  Yeni Kullanıcı Adı :  \`${tag} ${name} | ${age}\` **

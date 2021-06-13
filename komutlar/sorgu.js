@@ -4,7 +4,7 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {
 
-if(!message.member.roles.cache.some(r => [(ayarlar.registeryetki)].includes(r.id)) && (!message.member.hasPermission("ADMINISTRATOR")))return message.reply(`**Bu komut __YETKİLİLERE__ özel bir komut.**`)
+if(!message.member.roles.cache.some(r => [(ayarlar.yetkiliROL)].includes(r.id)) && (!message.member.hasPermission("ADMINISTRATOR")))return message.reply(`Bu komutu sadece yetkililer kullanabilir!!!`)
  
  let kullanıcı = message.mentions.users.first()
     
@@ -24,9 +24,9 @@ if(kayıtlar === undefined) kayıtlar = "0"
 const sorgu1 = new Discord.MessageEmbed()
 .setThumbnail(message.author.avatarURL ({ dynamic: true}))
 .setAuthor(message.author.username, message.author.avatarURL)
-.setDescription(`<a:elmaskirmizi:816572857731121172> Toplam Kayıtların: \`${kayıtlar}\`
-:man: Toplam Erkek Kayıtların: \`${erkek}\`
-:girl: Toplam Kadın Kayıtların: \`${kadın}\``)
+.setDescription(`˃ Toplam Kayıtların: \`${kayıtlar}\`
+˃ Toplam Erkek Kayıtların: \`${erkek}\`
+˃ Toplam Kadın Kayıtların: \`${kadın}\``)
 .setColor('#dcdd64')
  return message.channel.send(sorgu1)
 };
@@ -45,9 +45,9 @@ if(kayıtlar1 === undefined) kayıtlar1 = "0"
 const sorgu2 = new Discord.MessageEmbed()
 .setThumbnail(kullanıcı.avatarURL ({ dynamic: true})) 
 .setAuthor(`${kullanıcı.username}`)
-.setDescription(`<a:elmaskirmizi:816572857731121172> Toplam Kayıtların: \`${kayıtlar1}\`
-:man: Toplam Erkek Kayıtların: \`${erkek1}\`
-:girl: Toplam Kadın Kayıtların: \`${kadın1}\``)
+.setDescription(`˃ Toplam Kayıtların: \`${kayıtlar1}\`
+˃ Toplam Erkek Kayıtların: \`${erkek1}\`
+˃ Toplam Kadın Kayıtların: \`${kadın1}\``)
 .setColor('#dcdd64')
  return message.channel.send(sorgu2)
   
@@ -58,10 +58,10 @@ const sorgu2 = new Discord.MessageEmbed()
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: ["sorgu", "kayıtlar", "kayıt-kontrol"],
+    aliases: ["stat", "kayıtlar", "kayıt-kontrol"],
     permLvl: 0,
 }
   
 exports.help = {  
-  name: "kayıt-bilgi"
+  name: "stat"
 }
