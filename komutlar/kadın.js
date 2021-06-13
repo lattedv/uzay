@@ -76,7 +76,7 @@ member.roles.remove(kayıtsız)
   datab.set(`kayıtT.${member.id}.${message.guild.id}`, new Date().getTime());
 
 const embed = new Discord.MessageEmbed()
-.setTitle("<a:tikgif:853591875340075030> Kayıt Başarılı")
+.setTitle("\<a:onaygif:853590900801798146> Kayıt Başarılı")
 .setThumbnail(member.user.avatarURL({dynamic: true}))
 .setDescription(`
 
@@ -85,9 +85,9 @@ Kayıt Edilen kullanıcı : ${member}
 Kayıt İşleminde Verilen Rol : <@&${ayarlar.kadınROL}>
 Yeni Kullanıcı Adı :  \`${tag} ${name} | ${age}\` **
 
-  **Bu Kullanıcının Sunucudaki Eski İsimleri [${sayı++ || "0"}]     \n\n${data.join('\n')} ** `).setColor('0x348f36').setFooter(message.author.tag, message.author.avatarURL({dynamic: true})).setTimestamp()  `) 
+**Bu Kullanıcının Sunucudaki Eski İsimleri [${sayı++ || "0"}]     \n\n${data.join('\n')} ** `)
 
-.setColor("0x2f3136")
+.setColor("0x348f36")
 .setTimestamp()
 
 

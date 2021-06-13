@@ -84,7 +84,7 @@ Kayıt Edilen kullanıcı : ${member}
 Kayıt İşleminde Verilen Rol : <@&${ayarlar.erkekROL}>
 Yeni Kullanıcı Adı :  \`${tag} ${name} | ${age}\` **
 
- **Bu Kullanıcının Sunucudaki Eski İsimleri [${sayı++ || "0"}]     \n\n${data.join('\n')} ** `).setColor('0x348f36').setFooter(message.author.tag, message.author.avatarURL({dynamic: true})).setTimestamp()  
+ **Bu Kullanıcının Sunucudaki Eski İsimleri [${sayı++ || "0"}]     \n\n${data.join('\n')} ** `).setColor('0x348f36').setFooter(message.author.tag, message.author.avatarURL({dynamic: true})).setTimestamp()   
 
 
 
