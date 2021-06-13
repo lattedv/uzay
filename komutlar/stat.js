@@ -4,7 +4,7 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {
 
-if(!message.member.roles.cache.some(r => [(ayarlar.yetkiliROL)].includes(r.id)) && (!message.member.hasPermission("ADMINISTRATOR")))return message.reply(`Bu komutu sadece yetkililer kullanabilir!!!`)
+if(!message.member.roles.cache.some(r => [(ayarlar.yetkiliROL)].includes(r.id)) && (!message.member.hasPermission("ADMINISTRATOR")))return message.reply(`**Bu komutu sadece __KAYIT SORUMLULARI__ kullana bilir.**`)
  
  let kullanıcı = message.mentions.users.first()
     

@@ -23,8 +23,8 @@ module.exports.run = async (client, message, args) => {
  🔉 Sunucdaki Toplam Sesteki Üye **${sestekiüye}**
  🟢 Sunucudaki Toplam Çevrimiçi Üye **${online}**
   Tagımızı Alan Toplam Üye **${ailem}**
-  Sunucumuzun Tagı **<TAGI YAZIN>**
-  Sunucumuzun Etiket Tagı **<TAGI YAZIN>**
+  Sunucumuzun Tagı **<BOŞ>**
+  Sunucumuzun Etiket Tagı **<BOŞ>**
   `)
   message.channel.send(say)
   

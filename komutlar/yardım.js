@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
 \`.sil : belirttiğiniz sayıda mesajı siler.\`
 \`.nuke : kanalı siler ve kopyasını oluşturur.\`
 \`.top : top kayıtcıları gösterir.\`
-\`.sorgu : belirttiğiniz kullancının loglarını gösterir.\`
+\`.stat : belirttiğiniz kullancının loglarını gösterir.\`
 \`.ping : botun pingini gösterir.\`
 \`.yardım : botun yardım menüsüne erişim sağlar.\`
    

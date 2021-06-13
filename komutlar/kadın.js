@@ -14,7 +14,7 @@ let kadınrol3 = message.guild.roles.cache.find(r => r.id === ayarlar.kadınSEMB
 let kayıtsız = message.guild.roles.cache.find(r => r.id === ayarlar.kayıtsızROL)
 
 if(![(ayarlar.yetkiliROL)].some(role => message.member.roles.cache.get(role)) && !message.member.hasPermission('ADMINISTRATOR')) 
-return message.reply(`Bu işlemi sadece yetkililer kullanabilir!!!`) 
+return message.reply(`**Bu komutu sadece __KAYIT SORUMLULARI__ kullana bilir.**`) 
   
 
 const member = message.guild.member(message.mentions.members.first() || message.guild.members.cache.get(args[0]));

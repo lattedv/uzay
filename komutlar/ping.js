@@ -8,7 +8,7 @@ exports.run = (client, message, params) => {
   .addField(":signal_strength: API Gecikmesi:", `**${client.ws.ping}** ms`)
 message.channel.send(embed)
 }
-exports.conf = {//sanctus
+exports.conf = {//latte
   enable: true,
   guildOnly: false,
   aliases: [],
@@ -18,4 +18,4 @@ exports.help = {
   name: "ping",
   description: "botun pingini gösterir.",
   usage: "ping"
-}//sanctus
+}//latte
