@@ -42,8 +42,8 @@ let time = timereplace.replace(/y/, ' yıl').replace(/d/, ' gün').replace(/s/, 
 let tag = ayarlar.tag
 let name = args[1]
 let age = Number(args[2])
-if(!name) return message.channel.send('Bir isim belirt.')
-if(!age) return message.channel.send('Bir yaş belirt.')
+if(!name) return message.channel.send('**\<a:redgif:853591843630219304> Bir __isim__ belirt.**')
+if(!age) return message.channel.send('**\<a:redgif:853591843630219304> Bir __yaş__ belirt.**')
    
 datab.add(`yetkili.${message.author.id}.erkek`, 1)
 datab.add(`yetkili.${message.author.id}.toplam`, 1)
@@ -79,9 +79,9 @@ const embed = new Discord.MessageEmbed()
 .setTitle("Kayıt Başarılı")
 .setThumbnail(member.user.avatarURL({dynamic: true}))
 .setDescription(`
- **Kayıt Edilen kullanıcı : ${member}
- Kayıt İşleminde Verilen Rol : <@&${ayarlar.kadınROL}>
- Yeni Kullanıcı Adı :  \`${tag} ${name} | ${age}\`**
+ \<a:tikgif:853591875340075030> **Kayıt Edilen kullanıcı : ${member}
+ \<a:tikgif:853591875340075030> Kayıt İşleminde Verilen Rol : <@&${ayarlar.kadınROL}>
+ \<a:tikgif:853591875340075030> Yeni Kullanıcı Adı :  \`${tag} ${name} | ${age}\`**
 
  Bu Kullanıcının Sunucudaki Eski İsimleri ${sayı++ || "0"} i\n\n${data.join('\n')}
  `) 
