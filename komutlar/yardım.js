@@ -15,6 +15,7 @@ module.exports.run = async (client, message, args) => {
 \`.top : top kayıtcıları gösterir.\`
 \`.sorgu : belirttiğiniz kullancının loglarını gösterir.\`
 \`.ping : botun pingini gösterir.\`
+\`.git : belirttiğiniz kişinin sesli kanalına katılırsınız.\`
 \`.yardım : botun yardım menüsüne erişim sağlar.\`
    
 **Latte**  
