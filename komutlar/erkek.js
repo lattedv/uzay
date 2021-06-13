@@ -25,7 +25,7 @@ if(member.id === client.user.id) return message.channel.send('Botu kayıt edemez
 if(member.id === message.guild.OwnerID) return message.channel.send('Sunucu sahibini kayıt edemezsin.')
 if(member.roles.highest.position >= message.member.roles.highest.position) return message.channel.send(`Bu kullanıcı sizden üst/aynı pozsiyondadır.`)
   
-if(!args[0]) return message.channel.send('Bir kullanıcı belirt')  
+if(!args[0]) return message.channel.send('**\<a:redgif:853591843630219304> Bir kullanıcı belirt.**')  
 let timereplace = args[0];
 let time = timereplace.replace(/y/, ' yıl').replace(/d/, ' gün').replace(/s/, ' saniye').replace(/m/, ' dakika').replace(/h/, ' saat') 
  datab.add('case', 1)
@@ -79,8 +79,8 @@ const embed = new Discord.MessageEmbed()
 .setTitle("\<a:onaygif:853590900801798146> Kayıt Başarılı")
 .setThumbnail(member.user.avatarURL({dynamic: true}))
 .setDescription(`
-
-**Kayıt Edilen kullanıcı : ${member}
+**Kayıt eden yetkili : ${message.author}
+Kayıt Edilen kullanıcı : ${member}
 Kayıt İşleminde Verilen Rol : <@&${ayarlar.erkekROL}>
 Yeni Kullanıcı Adı :  \`${tag} ${name} | ${age}\` **
 
