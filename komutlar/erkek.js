@@ -7,7 +7,7 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run =  async (client, message, args) => {
 if(![(ayarlar.kayıtcı)].some(role => message.member.roles.cache.get(role)) && !message.member.hasPermission('ADMINISTRATOR'))
-return message.reply(`Bu İşlemi Tek Kayıt Sorumlusu Kardeşimiz Kullana Bilir !`) 
+return message.reply(`**Bu komutu sadece __KAYIT SORUMLULARI__ kullana bilir.**`) 
 
 
 const member = message.guild.member(message.mentions.members.first() || message.guild.members.cache.get(args[0]));

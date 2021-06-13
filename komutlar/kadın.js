@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
     ) &&
     !message.member.hasPermission("ADMINISTRATOR")
   )
-    return message.reply(`Bu İşlemi Tek Yetkili Kardeşimiz Kullana Bilir !`);
+    return message.reply(`**Bu komutu sadece __KAYIT SORUMLULARI__ kullana bilir.**`);
 
   const member = message.guild.member(
     message.mentions.members.first() || message.guild.members.cache.get(args[0])
