@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
 \`.ping : botun pingini gösterir.\`
 \`.yardım : botun yardım menüsüne erişim sağlar.\`
    
-**Latte**  
+**Latte** \<:dev:853551852964675585>  
   
   `).setThumbnail(message.author.avatarURL() ? message.author.avatarURL({dynamic: true}) : 'https://cdn.discordapp.com/attachments/799170794688217109/799282353192304680/kel20olmak.png'))
 

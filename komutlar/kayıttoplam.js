@@ -4,7 +4,7 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, member) => {
   
-if(!message.member.roles.cache.some(r => [(ayarlar.kayıtcı)].includes(r.id)) && (!message.member.hasPermission("ADMINISTRATOR")))return message.reply(`Bu Komudu Kayıtcı Kardeşlerim Kullana Bilir !`)
+if(!message.member.roles.cache.some(r => [(ayarlar.kayıtcı)].includes(r.id)) && (!message.member.hasPermission("ADMINISTRATOR")))return message.reply(`**Bu komutu sadece __KAYIT SORUMLULARI__ kullana bilir.**`)
 
   let uye = message.mentions.users.first() || message.author;
 let bilgi = db.get(`yetkili.${uye.id}.toplam`);

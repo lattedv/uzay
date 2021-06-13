@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
 //-------------------------------------------------------------------------------\\
   
 if(![(ayarlar.kayıtcı)].some(role => message.member.roles.cache.get(role)) && !message.member.hasPermission('ADMINISTRATOR')) 
-return message.reply(`Bu İşlemi Sadece Kayıt Sorumlusu Yapapbilir !`) 
+return message.reply(`**Bu komutu sadece __KAYIT SORUMLULARI__ kullana bilir.**`) 
   
 const kayıtsız = (ayarlar.kayıtsız)
 

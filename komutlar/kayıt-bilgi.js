@@ -4,7 +4,7 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {
 
-if(!message.member.roles.cache.some(r => [(ayarlar.registeryetki)].includes(r.id)) && (!message.member.hasPermission("ADMINISTRATOR")))return message.reply(`**\<:dev:853551852964675585> Bu komut __YETKİLİLERE__ özel bir komut.**`)
+if(!message.member.roles.cache.some(r => [(ayarlar.registeryetki)].includes(r.id)) && (!message.member.hasPermission("ADMINISTRATOR")))return message.reply(`**Bu komut __YETKİLİLERE__ özel bir komut.**`)
  
  let kullanıcı = message.mentions.users.first()
     
