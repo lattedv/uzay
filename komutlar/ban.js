@@ -9,7 +9,7 @@ let sebep = args.slice(1).join(' ') || 'Bir sebep belirtirmemiş'
  const banembed = new Discord.MessageEmbed()   
   .setColor("BLUE")                                                                                   
   .setThumbnail(message.author.avatarURL({ dynamic: true }))
-  .addField(`__**Banlayan yetkili:**__`, `${message.author.username}`)
+  .addField(`__**Banlayan yetkili:**__`, `${message.author}`)
   .addField(`__**Banlanan:**__`, `${user.user.tag}`)
   .addField(`__**Sebep:**__`, `${sebep}`)
   .setImage("https://i.pinimg.com/originals/b2/84/33/b28433c392959f923ff0d736cd89dcbd.gif");

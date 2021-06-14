@@ -11,6 +11,7 @@ module.exports.run = async (client, message, args) => {
 \`.kick : belirttiğiniz kullancıyı sunucudan atar.\` 
 \`.unban : belirttiğiniz kullancının yasağını kaldırır.\` 
 \`.sil : belirttiğiniz sayıda mesajı siler.\`
+\`.say : sunucu hakkında bilgi verir.\`
 \`.nuke : kanalı siler ve kopyasını oluşturur.\`
 \`.top : top kayıtcıları gösterir.\`
 \`.stat : belirttiğiniz kullancının loglarını gösterir.\`
