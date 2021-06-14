@@ -3,7 +3,7 @@ const db = require("quick.db");
 
 module.exports.run = async (client, message, args) => {
     
-  message.channel.send(new Discord.MessageEmbed().setColor('#32cd32').setDescription(`\<a:onaygif:853590900801798146> **BOŞ YARDIM MENÜSÜ**
+  message.channel.send(new Discord.MessageEmbed().setColor('#32cd32').setDescription(`\<a:onay:853152648953200660> **BOŞ YARDIM MENÜSÜ**
   
 \`.e : belirttiğiniz kullancıyı erkek olarak kayıt eder.\`  
 \`.k : belirttiğiniz kullancıyı kadın olarak kayıt eder.\` 

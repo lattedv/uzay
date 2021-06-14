@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 exports.run = async (client, message, args) => {
-if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setDescription(`<a:redgif:853591843630219304> | Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin!`))
+if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setDescription(`<a:no:854088016522772541> | Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin!`))
 let user = message.guild.member(message.mentions.members.first() || message.guild.members.cache.get(args[0]));
-if(!user) return message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setTitle("Hata Kullanım <a:redgif:853591843630219304>").setDescription(`Banlanıcak Kişiyi Seçmelisin`))
+if(!user) return message.channel.send(new Discord.MessageEmbed().setColor("BLUE").setTitle("Hata Kullanım <a:no:854088016522772541>").setDescription(`Banlanıcak Kişiyi Seçmelisin`))
 let sebep = args.slice(1).join(' ') || 'Bir sebep belirtirmemiş'
  message.guild.members.ban(user, { reason: sebep, days: 7 });
 

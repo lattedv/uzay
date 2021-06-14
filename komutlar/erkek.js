@@ -42,8 +42,8 @@ let time = timereplace.replace(/y/, ' yıl').replace(/d/, ' gün').replace(/s/, 
 let tag = ayarlar.tag
 let name = args[1]
 let age = Number(args[2])
-if(!name) return message.channel.send('**\<a:redgif:853591843630219304> | Bir __isim__ belirt.**')
-if(!age) return message.channel.send('**\<a:redgif:853591843630219304> | Bir __yaş__ belirt.**')
+if(!name) return message.channel.send('**\<a:no:854088016522772541> | Bir __isim__ belirt.**')
+if(!age) return message.channel.send('**\<a:no:854088016522772541> | Bir __yaş__ belirt.**')
    
 datab.add(`yetkili.${message.author.id}.erkek`, 1)
 datab.add(`yetkili.${message.author.id}.toplam`, 1)
@@ -76,7 +76,7 @@ member.roles.remove(kayıtsız)
   datab.set(`kayıtT.${member.id}.${message.guild.id}`, new Date().getTime());
 
 const embed = new Discord.MessageEmbed()
-.setTitle("\<a:onaygif:853590900801798146> | Kayıt Başarılı")
+.setTitle("\<a:onay:853152648953200660> | Kayıt Başarılı")
 .setThumbnail(member.user.avatarURL({dynamic: true}))
 .setDescription(`
 **Kayıt eden yetkili : ${message.author}
